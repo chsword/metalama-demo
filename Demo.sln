@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogDemo", "LogDemo\LogDemo.csproj", "{823E0037-EF9C-475C-8CA3-91D5FBC54B23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogDemo", "LogDemo\LogDemo.csproj", "{823E0037-EF9C-475C-8CA3-91D5FBC54B23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "简单示例", "简单示例", "{FA4F1CFF-CB7F-42B0-B727-F0CAE0C7CA86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetryDemo", "src\RetryDemo\RetryDemo.csproj", "{CBEEEDB8-1887-4146-8260-EFB4C96AD339}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Metalama简介2", "Metalama简介2", "{95891D00-4DC3-44F0-9B9F-11C75E3E4D73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{823E0037-EF9C-475C-8CA3-91D5FBC54B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{823E0037-EF9C-475C-8CA3-91D5FBC54B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{823E0037-EF9C-475C-8CA3-91D5FBC54B23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBEEEDB8-1887-4146-8260-EFB4C96AD339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEEEDB8-1887-4146-8260-EFB4C96AD339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEEEDB8-1887-4146-8260-EFB4C96AD339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEEEDB8-1887-4146-8260-EFB4C96AD339}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{823E0037-EF9C-475C-8CA3-91D5FBC54B23} = {FA4F1CFF-CB7F-42B0-B727-F0CAE0C7CA86}
+		{CBEEEDB8-1887-4146-8260-EFB4C96AD339} = {95891D00-4DC3-44F0-9B9F-11C75E3E4D73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36589D6B-62B5-414C-8F78-E269404E6A3D}
