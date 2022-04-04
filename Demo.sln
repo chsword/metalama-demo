@@ -7,31 +7,49 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogDemo", "LogDemo\LogDemo.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "简单示例", "简单示例", "{FA4F1CFF-CB7F-42B0-B727-F0CAE0C7CA86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetryDemo", "src\RetryDemo\RetryDemo.csproj", "{CBEEEDB8-1887-4146-8260-EFB4C96AD339}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetryDemo", "src\RetryDemo\RetryDemo.csproj", "{CBEEEDB8-1887-4146-8260-EFB4C96AD339}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Metalama简介2", "Metalama简介2", "{95891D00-4DC3-44F0-9B9F-11C75E3E4D73}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyDemo", "src\PropertyDemo\PropertyDemo.csproj", "{5C8A9D84-3433-4D4D-92F6-DE03A7224918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeDemo", "src\TypeDemo\TypeDemo.csproj", "{F3D4184D-C3FB-4124-84DD-13BD8A38E669}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		LamaDebug|Any CPU = LamaDebug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{823E0037-EF9C-475C-8CA3-91D5FBC54B23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{823E0037-EF9C-475C-8CA3-91D5FBC54B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{823E0037-EF9C-475C-8CA3-91D5FBC54B23}.LamaDebug|Any CPU.ActiveCfg = LamaDebug|Any CPU
+		{823E0037-EF9C-475C-8CA3-91D5FBC54B23}.LamaDebug|Any CPU.Build.0 = LamaDebug|Any CPU
 		{823E0037-EF9C-475C-8CA3-91D5FBC54B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{823E0037-EF9C-475C-8CA3-91D5FBC54B23}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBEEEDB8-1887-4146-8260-EFB4C96AD339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBEEEDB8-1887-4146-8260-EFB4C96AD339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEEEDB8-1887-4146-8260-EFB4C96AD339}.LamaDebug|Any CPU.ActiveCfg = LamaDebug|Any CPU
+		{CBEEEDB8-1887-4146-8260-EFB4C96AD339}.LamaDebug|Any CPU.Build.0 = LamaDebug|Any CPU
 		{CBEEEDB8-1887-4146-8260-EFB4C96AD339}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBEEEDB8-1887-4146-8260-EFB4C96AD339}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C8A9D84-3433-4D4D-92F6-DE03A7224918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C8A9D84-3433-4D4D-92F6-DE03A7224918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C8A9D84-3433-4D4D-92F6-DE03A7224918}.LamaDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C8A9D84-3433-4D4D-92F6-DE03A7224918}.LamaDebug|Any CPU.Build.0 = Debug|Any CPU
+		{5C8A9D84-3433-4D4D-92F6-DE03A7224918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C8A9D84-3433-4D4D-92F6-DE03A7224918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D4184D-C3FB-4124-84DD-13BD8A38E669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D4184D-C3FB-4124-84DD-13BD8A38E669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D4184D-C3FB-4124-84DD-13BD8A38E669}.LamaDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D4184D-C3FB-4124-84DD-13BD8A38E669}.LamaDebug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D4184D-C3FB-4124-84DD-13BD8A38E669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D4184D-C3FB-4124-84DD-13BD8A38E669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{823E0037-EF9C-475C-8CA3-91D5FBC54B23} = {FA4F1CFF-CB7F-42B0-B727-F0CAE0C7CA86}
-		{CBEEEDB8-1887-4146-8260-EFB4C96AD339} = {95891D00-4DC3-44F0-9B9F-11C75E3E4D73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36589D6B-62B5-414C-8F78-E269404E6A3D}
