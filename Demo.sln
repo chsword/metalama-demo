@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyDemo", "src\Propert
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeDemo", "src\TypeDemo\TypeDemo.csproj", "{F3D4184D-C3FB-4124-84DD-13BD8A38E669}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogWithWarning", "src\LogWithWarning\LogWithWarning.csproj", "{59F402A6-F6AB-4AC5-9C64-CCD5E11E5D02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,12 +46,15 @@ Global
 		{F3D4184D-C3FB-4124-84DD-13BD8A38E669}.LamaDebug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D4184D-C3FB-4124-84DD-13BD8A38E669}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3D4184D-C3FB-4124-84DD-13BD8A38E669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F402A6-F6AB-4AC5-9C64-CCD5E11E5D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F402A6-F6AB-4AC5-9C64-CCD5E11E5D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F402A6-F6AB-4AC5-9C64-CCD5E11E5D02}.LamaDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F402A6-F6AB-4AC5-9C64-CCD5E11E5D02}.LamaDebug|Any CPU.Build.0 = Debug|Any CPU
+		{59F402A6-F6AB-4AC5-9C64-CCD5E11E5D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F402A6-F6AB-4AC5-9C64-CCD5E11E5D02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{823E0037-EF9C-475C-8CA3-91D5FBC54B23} = {FA4F1CFF-CB7F-42B0-B727-F0CAE0C7CA86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36589D6B-62B5-414C-8F78-E269404E6A3D}
