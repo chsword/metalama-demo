@@ -24,6 +24,7 @@ namespace LogDemo {
         public override dynamic? OverrideMethod()
         {
             Console.WriteLine(meta.Target.Method.ToDisplayString() + " 开始运行.");
+            meta.DebugBreak();
             var result = meta.Proceed();
             Console.WriteLine(meta.Target.Method.ToDisplayString() + " 结束运行.");
             return result;
