@@ -10,7 +10,7 @@ namespace LogDemo {
             Console.WriteLine(r);
         }
         // 在这个方法中使用了下面的Attribute
-        [LogAttribute]
+        [Log2Attribute]
         private static int Add(int a, int b)
         {
             var result = a + b;
@@ -36,11 +36,14 @@ namespace LogDemo {
         public override void BuildAspect(IAspectBuilder<IMethod> builder)
         {
            builder.Advices.OverrideMethod(builder.Target,nameof(this.MethodLog));
+            System.Diagnostics.Debugger.Break();  
         }
         [Template]
         public dynamic MethodLog()
         {
             Console.WriteLine(meta.Target.Method.ToDisplayString() + " 开始运行.");
+            System.Diagnostics.Debugger.Break(); 
+            meta.DebugBreak();
             var result = meta.Proceed();
             Console.WriteLine(meta.Target.Method.ToDisplayString() + " 结束运行.");
             return result;
