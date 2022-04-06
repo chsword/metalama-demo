@@ -28,7 +28,6 @@ public class NotifyPropertyChangedAttribute : OverrideFieldOrPropertyAspect
         get => meta.Proceed();
         set
         {
-            Metalama.Framework.Aspects.OverrideEventAspect
             // 判断当前属性的Value与传入value是否相等
             if (meta.Target.Property.Value != value)
             {

@@ -10,7 +10,7 @@ namespace LogDemo {
             Console.WriteLine(r);
         }
         // 在这个方法中使用了下面的Attribute
-        [Log2Attribute]
+        [LogAttribute]
         private static int Add(int a, int b)
         {
             var result = a + b;
