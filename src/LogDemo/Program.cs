@@ -31,6 +31,7 @@ namespace LogDemo {
 
         }
     }
+    // 此Aspect与LogAttribute等价
     public class Log2Attribute : MethodAspect
     {
         public override void BuildAspect(IAspectBuilder<IMethod> builder)
