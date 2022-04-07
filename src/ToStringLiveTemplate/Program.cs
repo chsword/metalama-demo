@@ -20,6 +20,34 @@ internal class Point
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [LiveTemplate] // 表示当前Aspect为VS添加LiveTempate
 internal class ToStringAttribute : TypeAspect
 {
