@@ -34,7 +34,8 @@ class Fabric : NamespaceFabric
                                     .Where(t => t.Accessibility == Accessibility.Private && !t.IsStatic
                                     )
                                  )
-            .RegisterFinalValidator(this.FinalValidator);
+            //RegisterFinalValidator
+            .Validate(this.FinalValidator);
     }
 
     private void FinalValidator(in DeclarationValidationContext context)

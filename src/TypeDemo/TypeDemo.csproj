@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Metalama.Framework" Version="0.5.7-preview" />
+		<PackageReference Include="Metalama.Framework" Version="0.5.8-preview" />
 	</ItemGroup>
 
 </Project>

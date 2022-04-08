@@ -13,19 +13,25 @@ public class ToStringAttribute : TypeAspect
         if (builder.AspectInstance.Predecessors[0].Instance is IAttribute attribute)
         {
             builder.Diagnostics.Suggest(
-                new CodeFix("将 [ToString] 切换至手动实现", codeFixBuilder => this.ImplementManually(codeFixBuilder, builder.Target)),
+                new CodeFix("将 [ToString] 切换至手动实现",
+                    async (codeFixBuilder) =>
+                    {
+                       // TODO  await codeFixBuilder.ApplyAspectAsync(codeFixBuilder,builder.Target);
+                        await codeFixBuilder.RemoveAttributesAsync(builder.Target, typeof(ToStringAttribute));
+                    }),
                 builder.Target);
         }
     }
 
-    /// <summary>
-    /// 当点击手动实现时的操作
-    /// </summary>
-    private async Task ImplementManually(ICodeActionBuilder builder, INamedType targetType)
-    {
-        await builder.ApplyAspectAsync(targetType, this);
-        await builder.RemoveAttributesAsync(targetType, typeof(ToStringAttribute));
-    }
+    ///// <summary>
+    ///// 当点击手动实现时的操作
+    ///// </summary>
+ 
+    //private async Task ImplementManually(ICodeActionBuilder builder, INamedType targetType)
+    //{
+    //    await builder.ApplyAspectAsync(targetType, this);
+    //    await builder.RemoveAttributesAsync(targetType, typeof(ToStringAttribute));
+    //}
 
     [Introduce(WhenExists = OverrideStrategy.Override, Name = "ToString")]
     public string IntroducedToString()
