@@ -11,12 +11,6 @@ class Program
       
     }
 }
-[TypeNotifyPropertyChanged]
-public class MyModel
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-}
 
 //[Inherited]
 internal class TypeNotifyPropertyChangedAttribute : TypeAspect
@@ -31,7 +25,7 @@ internal class TypeNotifyPropertyChangedAttribute : TypeAspect
         {
             //用OverridePropertySetter重写属性或字段
             //参数1 要重写的属性 参数2 新的get实现 参数3 新的set实现
-            builder.Advices.OverrideFieldOrPropertyAccessors(property, null, nameof(this.OverridePropertySetter));
+            builder.Advices.OverrideAccessors(property, null, nameof(this.OverridePropertySetter));
         }
     }
     // Interface 要实现什么成员

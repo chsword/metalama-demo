@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Metalama.Framework" Version="0.5.8-preview" />
+    <PackageReference Include="Metalama.Framework" Version="0.5.11-preview" />
   </ItemGroup>
 
 </Project>
