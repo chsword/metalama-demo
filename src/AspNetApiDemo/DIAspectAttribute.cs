@@ -1,51 +1,55 @@
 ﻿using Metalama.Framework.Aspects;
 using Metalama.Framework.Code;
 using Metalama.Framework.Diagnostics;
+using Metalama.Framework.Eligibility;
+using Metalama.Framework.Fabrics;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetApiDemo
+namespace AspNetApiDemo;
+
+public class DIAspectAttribute : OverrideFieldOrPropertyAspect
 {
-    public class DIAspectAttribute : TypeAspect
+    public override dynamic? OverrideProperty
     {
-        //public override void BuildAspect(IAspectBuilder<IConstructor> builder)
-        //{
-        //    base.BuildAspect(builder);
-            
-        //}
-
-        private static readonly DiagnosticDefinition<int> _error = new(
-            "DEMO02",
-            Severity.Warning,
-            "[DIAspect]只能定义在ControllerBase子类上,但当前应用在了{0}上。");
-
-        public override void BuildAspect(IAspectBuilder<INamedType> builder)
+        get
         {
-            base.BuildAspect(builder);
-            //if (builder.Target.BaseType?.Name != nameof(ControllerBase))
-            //{
-            //    builder.Diagnostics.Report(_error.WithArguments(builder.Target.FullName));
-            //}
+            // Get the property value.
+            var value = meta.Proceed();
 
-            var ctor = builder.Target.Methods.Count;
-            builder.Diagnostics.Report(_error.WithArguments(ctor));
-            //builder.Advices.OverrideMethod(builder.Target.Methods,
-            //    nameof(MethodLog));
-        }
-        [Template]
-        public dynamic MethodLog()
-        {
-            Console.WriteLine(meta.Target.Method.ToDisplayString() + " 开始运行.");
-            System.Diagnostics.Debugger.Break();
-            meta.DebugBreak();
-            var result = meta.Proceed();
-            Console.WriteLine(meta.Target.Method.ToDisplayString() + " 结束运行.");
-            return result;
+            if (value == null)
+            {
+             
+                // Call the service locator.
+                value = meta.Cast(
+                    meta.Target.FieldOrProperty.Type,
+                    (meta.This.HttpContext.RequestServices as IServiceProvider).GetService(meta.Target.FieldOrProperty.Type.ToType()));
 
+                // Set the field/property to the new value.
+                meta.Target.Property.Value = value
+                                             ?? throw new InvalidOperationException(
+                                                 $"Cannot get a service of type {meta.Target.FieldOrProperty.Type}.");
+            }
+
+            return value;
         }
+        set => throw new NotImplementedException();
     }
+}
 
-    public class X : ConstructorAspect
+public class AspNetProjectFabric : ProjectFabric
+{
+    public override void AmendProject(IProjectAmender amender)
     {
+        // 取 Controller结尾类中的private 且非static的field
+        amender.With(c => c.Types.Where(t =>
+                t.Name.EndsWith("Controller")
+                )
+                .SelectMany(t=>t.Fields)
+                .Where(f=>f.Accessibility == Accessibility.Private
+                && !f.IsStatic )
 
+                
+            )
+            .AddAspect<DIAspectAttribute>();
     }
 }

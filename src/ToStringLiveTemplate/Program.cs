@@ -19,7 +19,7 @@ internal class Point
 
 }
 
-[LiveTemplate] // 表示当前Aspect为VS添加LiveTempate
+[LiveTemplate] // 表示当前Aspect为VS添加LiveTemplate
 internal class ToStringAttribute : TypeAspect
 {
     [Introduce(WhenExists = OverrideStrategy.Override, Name = "ToString")]
