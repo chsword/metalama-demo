@@ -34,7 +34,7 @@ internal class Fabric : ProjectFabric
     {
         // 添加 LogAttribute 到符合规则的方法上
         // 为名为 Add 且 private 的方法添加 LogAttribute
-        amender.WithTargetMembers(c =>
+        amender.With(c =>
                 c.Types.SelectMany(t => t.Methods)
                        .Where(t => 
                               t.Name == "Add" && 

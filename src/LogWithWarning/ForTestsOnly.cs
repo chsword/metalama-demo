@@ -36,7 +36,7 @@ namespace LogWithWarning
 
         public void BuildAspect(IAspectBuilder<IDeclaration> builder)
         {
-            builder.WithTarget().ValidateReferences(this.ValidateReference, ReferenceKinds.All);
+            builder.With(c=>c).ValidateReferences(this.ValidateReference, ReferenceKinds.All);
         }
 
         private void ValidateReference(in ReferenceValidationContext context)

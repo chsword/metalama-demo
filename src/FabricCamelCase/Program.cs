@@ -29,7 +29,7 @@ class Fabric : NamespaceFabric
 
     public override void AmendNamespace(INamespaceAmender amender)
     {
-        amender.WithTargetMembers(c => 
+        amender.With(c => 
                                     c.AllTypes.SelectMany(t=>t.Fields)
                                     .Where(t => t.Accessibility == Accessibility.Private && !t.IsStatic
                                     )

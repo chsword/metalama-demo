@@ -37,8 +37,7 @@ public class Log2Attribute : MethodAspect
 {
     public override void BuildAspect(IAspectBuilder<IMethod> builder)
     {
-        builder.Advices.Override(builder.Target,nameof(this.MethodLog));
-        System.Diagnostics.Debugger.Break();  
+        builder.Advice.Override(builder.Target,nameof(this.MethodLog));
     }
     [Template]
     public dynamic MethodLog()

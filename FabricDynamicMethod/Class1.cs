@@ -30,7 +30,7 @@ public class AddUtils
                 var methodBuilder = amender.Advices.IntroduceMethod(
                     amender.Type,
                     nameof(this.MethodTemplate),
-                    tags: new TagDictionary { ["nums"] = i });
+                    tags: new Dictionary<string,int> { ["nums"] = i });
                 // 方法名
                 methodBuilder.Name = "Add" + i;
                 // 添加参数

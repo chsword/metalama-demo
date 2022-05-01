@@ -18,14 +18,14 @@ internal class TypeNotifyPropertyChangedAttribute : TypeAspect
     public override void BuildAspect(IAspectBuilder<INamedType> builder)
     {
         // 当前类实现一个接口
-        builder.Advices.ImplementInterface(builder.Target, typeof(INotifyPropertyChanged));
+        builder.Advice.ImplementInterface(builder.Target, typeof(INotifyPropertyChanged));
         // 获取所有符合要求的属性
         var props = builder.Target.Properties.Where(p => !p.IsAbstract && p.Writeability == Writeability.All);
         foreach (var property in props)
         {
             //用OverridePropertySetter重写属性或字段
             //参数1 要重写的属性 参数2 新的get实现 参数3 新的set实现
-            builder.Advices.OverrideAccessors(property, null, nameof(this.OverridePropertySetter));
+            builder.Advice.OverrideAccessors(property, null, nameof(this.OverridePropertySetter));
         }
     }
     // Interface 要实现什么成员
