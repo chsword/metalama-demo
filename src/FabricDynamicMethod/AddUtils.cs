@@ -1,5 +1,4 @@
-﻿using System.Reflection.Emit;
-using Metalama.Framework.Aspects;
+﻿using Metalama.Framework.Aspects;
 using Metalama.Framework.Fabrics;
 
 namespace FabricDynamicMethod;
@@ -12,14 +11,13 @@ public class AddUtils
         [Template]
         public int MethodTemplate()
         {
-            var num = (int) meta.Tags["nums"]!;
             var result = 0;
             foreach (var targetParameter in meta.Target.Parameters)
             {
                 result += targetParameter.Value;
             }
 
-            return num;
+            return result;
         }
 
         public override void AmendType(ITypeAmender amender)
@@ -29,8 +27,8 @@ public class AddUtils
                 // 生成一个方法
                 var methodBuilder = amender.Advices.IntroduceMethod(
                     amender.Type,
-                    nameof(this.MethodTemplate),
-                    tags: new Dictionary<string,int> { ["nums"] = i });
+                    nameof(this.MethodTemplate)
+                );
                 // 方法名
                 methodBuilder.Name = "Add" + i;
                 // 添加参数
